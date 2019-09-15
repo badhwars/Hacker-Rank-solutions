@@ -1,0 +1,26 @@
+    static String timeConversion(String s) {
+        /*
+         * Write your code here.
+
+         */
+        int n=0;
+         String [] str=s.split(":");
+         String c=str[2].substring(0,2);
+         if(str[0].equalsIgnoreCase("12") ){
+        if(str[2].charAt(2)==('A')){
+            str[0]="00";
+        } 
+
+
+         }
+          
+         
+        else if(str[2].charAt(2)==('P')){
+             n=12+Integer.parseInt(str[0]);
+             str[0]=Integer.toString(n);
+         }
+
+         String output=str[0]+":"+str[1]+":"+c;
+         return output;
+
+    }
