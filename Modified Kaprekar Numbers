@@ -1,0 +1,28 @@
+   static void kaprekarNumbers(int p, int q) {
+       boolean exists=false;
+        for (int i=p ; i<=q;i++){
+            int num = i ; 
+            int numSquare = i*i;  
+            String numStr=String.valueOf(num);  // converting the integers to string data types
+            String numStrSQ=String.valueOf(numSquare);
+            int numStrL = numStr.length();
+            int ans=numSquare; /// case for when square is of length 1
+
+         if(numStrSQ.length () > 1) // for all other cases when square is of bigger length
+         {
+             ans=Integer.parseInt(numStrSQ.substring(0,numStrSQ.length()-numStrL)) +                      Integer.parseInt(numStrSQ.substring(numStrSQ.length()-numStrL));
+         }
+
+            if(ans == i){   // if the number is equal to original number
+                
+                System.out.print(i+" ");
+                exists=true;
+            }
+
+           
+        }    
+        if(exists == false){   // if no number in range falls into criteria 
+            System.out.print("INVALID RANGE");
+        }
+
+    }
